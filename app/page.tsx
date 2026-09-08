@@ -23,9 +23,9 @@ export default function Home() {
               <p className="eyebrow"><span className="small-square" /> Senior Research Engineer · Meta</p>
               <h1 id="intro-title">Zijian Jin<span className="name-period">.</span></h1>
               <p className="also-name">You can call me Alex.</p>
-              <p className="intro-statement">Building agents that learn<br />from doing.</p>
-              <p className="bio">I work on coding agents and reinforcement learning for long-horizon ML workflows. At Meta, I build agents that learn from execution feedback and turn research ideas into runnable experiments.</p>
-              <p className="bio bio-secondary">Previously, I was a Research Scientist at Microsoft and TikTok. I’m also interested in self-evolving systems for automated ML research and adaptive computation for world models.</p>
+              <p className="intro-statement">Coding agents &amp;<br />asynchronous RL.</p>
+              <p className="bio">My research interests center on coding agents and asynchronous reinforcement learning. I’m interested in how language models learn from interaction and feedback to solve complex coding tasks.</p>
+              <p className="bio bio-secondary">More broadly, I’m interested in scalable post-training and reliable, long-horizon agent behavior. Previously, I was a Research Scientist at Microsoft and TikTok.</p>
               <div className="intro-links">
                 <a className="primary-link" href="#research">Explore my research <ArrowDown size={17} aria-hidden="true" /></a>
                 <a className="quiet-link" href="https://github.com/jinzijian">GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
@@ -75,10 +75,10 @@ export default function Home() {
           <section className="experience-section" id="experience" aria-labelledby="experience-title">
             <div className="section-heading"><div><p className="eyebrow">03 / Experience</p><h2 id="experience-title">Where I’ve been building.</h2></div></div>
             {[
-              { company: 'Meta', role: 'Senior Research Engineer', dates: 'Jan 2026 — Present', detail: 'Coding agents and reinforcement learning for long-horizon machine learning research workflows.' },
-              { company: 'Microsoft', role: 'Research Scientist', dates: 'Sep 2024 — Jan 2026', detail: 'Code language models, multi-agent systems, and reinforcement learning for GitHub Copilot.' },
-              { company: 'TikTok', role: 'Research Scientist', dates: 'Jul 2022 — Sep 2024', detail: 'Multimodal video understanding, preference optimization, and ad matching.' },
-            ].map(job => <article className="experience-row" key={job.company}><p className="job-dates">{job.dates}</p><div><h3>{job.company}</h3><p className="job-role">{job.role}</p><p className="job-description">{job.detail}</p></div></article>)}
+              { company: 'Meta', role: 'Senior Research Engineer', dates: 'Jan 2026 — Present' },
+              { company: 'Microsoft', role: 'Research Scientist', dates: 'Sep 2024 — Jan 2026' },
+              { company: 'TikTok', role: 'Research Scientist', dates: 'Jul 2022 — Sep 2024' },
+            ].map(job => <article className="experience-row" key={job.company}><p className="job-dates">{job.dates}</p><div><h3>{job.company}</h3><p className="job-role">{job.role}</p></div></article>)}
             <p className="education">M.S. Computer Engineering, New York University <span>2022</span><br />B.S. Electronic Science and Technology, Xidian University <span>2019</span></p>
           </section>
         </main>

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://jinzijian.github.io'),
   alternates: { canonical: 'https://jinzijian.github.io/' },
   title: 'Zijian Jin — AI Research & Engineering',
-  description: 'Zijian Jin (Alex), Senior Research Engineer at Meta. Coding agents, reinforcement learning, and adaptive world models. Previously Microsoft and TikTok.',
+  description: 'Zijian Jin (Alex), Senior Research Engineer at Meta. Coding agents, asynchronous reinforcement learning, and scalable post-training. Previously Microsoft and TikTok.',
   icons: { icon: '/icon.svg' },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

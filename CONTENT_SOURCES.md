@@ -15,3 +15,5 @@ The bio and experience are concise editorial summaries of the owner's resume. EM
 - Lita: https://arxiv.org/abs/2509.25873
 - CoCoT: https://arxiv.org/abs/2401.02582
 - Neuralizing Regular Expressions for Slot Filling: https://aclanthology.org/2021.emnlp-main.747/
+
+The owner requested a coding-agent and asynchronous-RL focus for the bio, expressed as research interests rather than employer-specific work. Experience entries now show only company, title, and dates.
