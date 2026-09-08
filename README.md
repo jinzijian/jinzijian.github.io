@@ -9,7 +9,7 @@ The website uses React and Vinext. Source lives on `master`; generated static HT
 - `app/page.tsx`: biography, contact links, publications, projects, and experience.
 - `app/globals.css`: layout, colors, and responsive styles.
 - `app/layout.tsx`: page title, description, and canonical URL.
-- `public/portrait.png`: portrait reused from the original website.
+- `public/portrait.jpg`: owner-provided current portrait, displayed with a CSS crop.
 - `CONTENT_SOURCES.md`: sources used for the website copy.
 
 Use Node.js 24, then run:
