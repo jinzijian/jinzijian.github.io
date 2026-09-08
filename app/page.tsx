@@ -33,7 +33,7 @@ export default function Home() {
               <div className="contact-links"><a href="mailto:zijianjin0730@gmail.com">Email <ArrowUpRight size={14} aria-hidden="true" /></a><a href="https://scholar.google.com/citations?user=cZu17HsAAAAJ&hl=en">Google Scholar <ArrowUpRight size={14} aria-hidden="true" /></a><a href="https://www.linkedin.com/in/zijianjin/">LinkedIn <ArrowUpRight size={14} aria-hidden="true" /></a></div>
             </div>
             <figure className="portrait-block">
-              <div className="portrait-frame"><img src="/portrait.jpg" alt="Zijian Jin" width={480} height={560} fetchPriority="high" /></div>
+              <div className="portrait-frame"><img src="/portrait-2026.jpg" alt="Zijian Jin" width={480} height={560} fetchPriority="high" /></div>
               <figcaption><span>Zijian Jin / Alex</span><span aria-hidden="true">↗</span></figcaption>
             </figure>
           </section>

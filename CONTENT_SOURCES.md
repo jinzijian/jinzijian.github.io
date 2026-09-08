@@ -3,7 +3,7 @@
 Updated 2026-09-07 using the owner-provided Zijian_2026_Coding.pdf: current role, employment dates, education, contact links, research interests, RefineJEPA, and conference labels. The original PDF is not distributed with the site.
 
 - Name, nickname, and GitHub: https://jinzijian.github.io/ and https://github.com/jinzijian
-- Portrait: owner-provided 照片 1.jpg. Original photo copied without image modification; framing is handled by CSS.
+- Portrait: latest owner-provided 照片 1.jpg (replacement supplied after the Meta affiliation update). Original photo copied without image modification; CSS framing excludes the top and bottom black bars.
 - ChainSWE title, author list, date, and summary: https://arxiv.org/abs/2607.02606
 - SWE-Edit title, author list, date, and summary: https://arxiv.org/abs/2604.26102
 - SWE-Edit implementation: https://github.com/microsoft/SWE-Edit
