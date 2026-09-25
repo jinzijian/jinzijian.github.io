@@ -54,7 +54,7 @@ h1 { font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgi
 .job-description { margin: 0; font-size: 1rem; line-height: 1.7; color: var(--muted-foreground); }
 .education { border-top: 1px solid var(--border); margin: 8px 0 0; padding-top: 24px; font-size: .875rem; line-height: 2; color: var(--muted-foreground); }
 .education span { color: #616d78; margin-left: 10px; }
-.intro-links { display: flex; align-items: center; gap: 27px; margin-top: 29px; font-size: .875rem; }
+.intro-links { display: flex; flex-wrap: wrap; align-items: center; gap: 27px; margin-top: 29px; font-size: .875rem; }
 .primary-link, .quiet-link { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; }
 .primary-link { color: var(--primary); border-bottom: 1px solid #b9caf3; }
 .primary-link:hover { border-bottom-color: var(--primary); }
@@ -198,3 +198,12 @@ nav a[aria-current='page'] { color: var(--primary); text-decoration: underline; 
 .post-languages { display: flex; gap: 20px; margin-top: 12px; font-size: .875rem; color: var(--primary); }
 .post-languages a { display: inline-flex; align-items: center; min-height: 36px; }
 .post-languages a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.home-blog { border-top: 1px solid var(--border); padding-top: 40px; padding-bottom: 45px; }
+.home-blog .quiet-link { color: var(--primary); font-size: .875rem; }
+.home-blog .blog-row { border-bottom: 0; padding-bottom: 0; }
+.home-blog h3 { font-size: 1.5rem; font-weight: 550; line-height: 1.4; letter-spacing: -.025em; margin: 0; }
+.home-blog h3 a { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+.home-blog h3 a:hover { color: var(--primary); }
+.home-blog h3 svg { flex-shrink: 0; }
+@media (max-width: 640px) { .home-blog h3 { font-size: 1.3rem; } }

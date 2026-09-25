@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { originalPosts, formatPostDate } from '@/lib/blog';
 
 const papers = [
   { name: 'RepoLaunch', title: 'Automating Build & Test Pipeline of Code Repositories on Any Language and Any Platform', href: 'https://arxiv.org/abs/2603.05026', venue: 'NeurIPS 2026', category: 'Build & test', date: '2026' },
@@ -29,6 +30,7 @@ export default function Home() {
               <p className="bio bio-secondary">More broadly, I’m interested in scalable post-training and reliable, long-horizon agent behavior. Previously, I was a Research Scientist at Microsoft and TikTok.</p>
               <div className="intro-links">
                 <a className="primary-link" href="#research">Explore my research <ArrowDown size={17} aria-hidden="true" /></a>
+                <a className="quiet-link" href="/blog/">Read my blog <ArrowUpRight size={15} aria-hidden="true" /></a>
                 <a className="quiet-link" href="https://github.com/jinzijian">GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
               </div>
               <div className="contact-links"><a href="mailto:zijianjin0730@gmail.com">Email <ArrowUpRight size={14} aria-hidden="true" /></a><a href="https://scholar.google.com/citations?user=cZu17HsAAAAJ&hl=en">Google Scholar <ArrowUpRight size={14} aria-hidden="true" /></a><a href="https://www.linkedin.com/in/zijianjin/">LinkedIn <ArrowUpRight size={14} aria-hidden="true" /></a></div>
@@ -38,6 +40,13 @@ export default function Home() {
               <figcaption><span>Zijian Jin / Alex</span><span aria-hidden="true">↗</span></figcaption>
             </figure>
           </section>
+          {originalPosts.length > 0 && <section className="home-blog" aria-labelledby="home-blog-title">
+            <div className="section-heading"><div><p className="eyebrow">Latest writing</p><h2 id="home-blog-title">Blog</h2></div><a className="quiet-link" href="/blog/">All posts <ArrowUpRight size={16} aria-hidden="true" /></a></div>
+            {originalPosts.slice(0, 1).map(post => <article className="blog-row" key={post.slug}>
+              <time dateTime={post.date}>{formatPostDate(post.date)}</time>
+              <div><h3><a href={`/blog/${post.slug}/`}>{post.title}<ArrowUpRight size={22} aria-hidden="true" /></a></h3><p>{post.description}</p></div>
+            </article>)}
+          </section>}
           <section className="research-section" id="research" aria-labelledby="research-title">
             <div className="section-heading"><div><p className="eyebrow">01 / Research</p><h2 id="research-title">Selected work</h2></div><span className="section-note">2021–2026</span></div>
             <div className="paper-list">
