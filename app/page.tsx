@@ -15,7 +15,7 @@ export default function Home() {
         <header className="site-header">
           <a className="wordmark" href="#main" aria-label="Zijian Jin home">zj<span>.</span></a>
           <nav aria-label="Main navigation">
-            <a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a>
+            <a href="#research">Research</a><a href="#projects">Projects</a><a href="/blog/">Blog</a><a href="#experience">Experience</a>
           </nav>
         </header>
         <main id="main">
