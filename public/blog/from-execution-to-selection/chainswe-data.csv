@@ -1,0 +1,70 @@
+source,model,configuration,mode,position,resolved_percent
+Table 3,7-model mean,Baseline,Oracle,1,58.6
+Table 3,7-model mean,Baseline,Oracle,2,64.3
+Table 3,7-model mean,Baseline,Oracle,3,67.0
+Table 3,7-model mean,Baseline,Seq,1,57.1
+Table 3,7-model mean,Baseline,Seq,2,39.3
+Table 3,7-model mean,Baseline,Seq,3,27.7
+Table 3,7-model mean,Baseline,Seq+Mem,1,56.5
+Table 3,7-model mean,Baseline,Seq+Mem,2,38.0
+Table 3,7-model mean,Baseline,Seq+Mem,3,28.2
+Table 3,7-model mean,Summarize,Oracle,1,58.0
+Table 3,7-model mean,Summarize,Oracle,2,66.0
+Table 3,7-model mean,Summarize,Oracle,3,68.4
+Table 3,7-model mean,Summarize,Seq,1,60.0
+Table 3,7-model mean,Summarize,Seq,2,35.4
+Table 3,7-model mean,Summarize,Seq,3,20.6
+Table 3,7-model mean,Summarize,Seq+Mem,1,59.3
+Table 3,7-model mean,Summarize,Seq+Mem,2,36.6
+Table 3,7-model mean,Summarize,Seq+Mem,3,22.0
+Table 3,7-model mean,Sub-Agent,Oracle,1,49.5
+Table 3,7-model mean,Sub-Agent,Oracle,2,58.1
+Table 3,7-model mean,Sub-Agent,Oracle,3,59.2
+Table 3,7-model mean,Sub-Agent,Seq,1,50.3
+Table 3,7-model mean,Sub-Agent,Seq,2,29.9
+Table 3,7-model mean,Sub-Agent,Seq,3,17.5
+Table 3,7-model mean,Sub-Agent,Seq+Mem,1,50.4
+Table 3,7-model mean,Sub-Agent,Seq+Mem,2,31.3
+Table 3,7-model mean,Sub-Agent,Seq+Mem,3,19.2
+Table 2,GPT-5.5,Baseline,Seq,all,49.0
+Table 2,GPT-5.5,Baseline,Seq+Mem,all,47.4
+Table 2,GPT-5.5,Summarize,Seq,all,42.4
+Table 2,GPT-5.5,Summarize,Seq+Mem,all,49.7
+Table 2,GPT-5.5,Sub-Agent,Seq,all,35.2
+Table 2,GPT-5.5,Sub-Agent,Seq+Mem,all,43.4
+Table 2,GPT-5.4-mini,Baseline,Seq,all,41.8
+Table 2,GPT-5.4-mini,Baseline,Seq+Mem,all,41.8
+Table 2,GPT-5.4-mini,Summarize,Seq,all,39.8
+Table 2,GPT-5.4-mini,Summarize,Seq+Mem,all,37.8
+Table 2,GPT-5.4-mini,Sub-Agent,Seq,all,21.7
+Table 2,GPT-5.4-mini,Sub-Agent,Seq+Mem,all,22.0
+Table 2,GPT-5.4-nano,Baseline,Seq,all,45.1
+Table 2,GPT-5.4-nano,Baseline,Seq+Mem,all,44.1
+Table 2,GPT-5.4-nano,Summarize,Seq,all,33.9
+Table 2,GPT-5.4-nano,Summarize,Seq+Mem,all,35.5
+Table 2,GPT-5.4-nano,Sub-Agent,Seq,all,23.0
+Table 2,GPT-5.4-nano,Sub-Agent,Seq+Mem,all,18.1
+Table 2,Claude-Opus-4.7,Baseline,Seq,all,40.5
+Table 2,Claude-Opus-4.7,Baseline,Seq+Mem,all,39.5
+Table 2,Claude-Opus-4.7,Summarize,Seq,all,39.5
+Table 2,Claude-Opus-4.7,Summarize,Seq+Mem,all,41.5
+Table 2,Claude-Opus-4.7,Sub-Agent,Seq,all,38.0
+Table 2,Claude-Opus-4.7,Sub-Agent,Seq+Mem,all,40.0
+Table 2,Claude-Opus-4.5,Baseline,Seq,all,43.0
+Table 2,Claude-Opus-4.5,Baseline,Seq+Mem,all,37.5
+Table 2,Claude-Opus-4.5,Summarize,Seq,all,40.5
+Table 2,Claude-Opus-4.5,Summarize,Seq+Mem,all,40.0
+Table 2,Claude-Opus-4.5,Sub-Agent,Seq,all,38.5
+Table 2,Claude-Opus-4.5,Sub-Agent,Seq+Mem,all,40.0
+Table 2,DeepSeek-V4-Pro,Baseline,Seq,all,29.6
+Table 2,DeepSeek-V4-Pro,Baseline,Seq+Mem,all,28.6
+Table 2,DeepSeek-V4-Pro,Summarize,Seq,all,27.3
+Table 2,DeepSeek-V4-Pro,Summarize,Seq+Mem,all,26.0
+Table 2,DeepSeek-V4-Pro,Sub-Agent,Seq,all,25.0
+Table 2,DeepSeek-V4-Pro,Sub-Agent,Seq+Mem,all,28.0
+Table 2,Gemini-3.1-Pro,Baseline,Seq,all,36.5
+Table 2,Gemini-3.1-Pro,Baseline,Seq+Mem,all,37.5
+Table 2,Gemini-3.1-Pro,Summarize,Seq,all,39.5
+Table 2,Gemini-3.1-Pro,Summarize,Seq+Mem,all,39.8
+Table 2,Gemini-3.1-Pro,Sub-Agent,Seq,all,37.2
+Table 2,Gemini-3.1-Pro,Sub-Agent,Seq+Mem,all,37.2

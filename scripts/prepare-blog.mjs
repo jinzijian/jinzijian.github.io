@@ -24,7 +24,7 @@ export async function readPosts(directory) {
       throw new Error(`${filename}: use a valid quoted date, e.g. "2026-09-25"`);
     }
     if (!content.trim()) throw new Error(`${filename}: article body is empty`);
-    posts.push({ slug, title: data.title.trim(), description: data.description.trim(), date, html: markdown.render(content) });
+    posts.push({ slug, title: data.title.trim(), description: data.description.trim(), date, lang: typeof data.lang === 'string' ? data.lang : 'en', html: markdown.render(content) });
   }
   return posts.sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 }

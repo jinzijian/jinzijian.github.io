@@ -15,7 +15,7 @@ export default async function Post({ params }: Props) {
   const { slug } = await params;
   const post = posts.find(item => item.slug === slug);
   if (!post) notFound();
-  return <article className="blog-article">
+  return <article className="blog-article" lang={post.lang}>
     <a className="blog-back" href="/blog/">← All posts</a>
     <header className="post-heading"><time dateTime={post.date}>{formatPostDate(post.date)}</time><h1>{post.title}</h1><p className="post-summary">{post.description}</p><p className="post-author">Zijian Jin</p></header>
     <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
