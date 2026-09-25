@@ -189,5 +189,4 @@ nav a[aria-current='page'] { color: var(--primary); text-decoration: underline; 
 .prose p:has(img) + p { font-size: .875rem; line-height: 1.8; color: var(--muted-foreground); margin-top: -1em; }
 .prose p:has(img) + p em { font-style: normal; }
 
-.prose img[src$="/chainswe-by-position.png"],
-.prose img[src$="/chainswe-memory-effect.png"] { width: min(100%, 600px); }
+.prose img[src$="/chainswe-by-position.png"] { width: min(100%, 600px); }
