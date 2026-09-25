@@ -55,7 +55,8 @@ export default function Home() {
           </section>
           <section className="related-work" aria-label="More selected publications">
             {[
-              { title: 'RepoLaunch: Automating Build & Test Pipelines Across Languages and Platforms', venue: 'arXiv 2026', url: 'https://arxiv.org/abs/2603.05026' },
+              { title: 'RepoLaunch: Automating Build & Test Pipeline of Code Repositories on Any Language and Any Platform', venue: 'NeurIPS 2026', url: 'https://arxiv.org/abs/2603.05026' },
+              { title: 'The Last Human-Written Paper: Agent-Native Research Artifacts', venue: 'NeurIPS 2026', url: 'https://arxiv.org/abs/2604.24658' },
               { title: 'Lita: Light Agent Uncovers the Agentic Coding Capabilities of LLMs', venue: 'arXiv 2025', url: 'https://arxiv.org/abs/2509.25873' },
               { title: 'CoCoT: Contrastive Chain-of-Thought Prompting for Large Multimodal Models', venue: 'ICPR 2024', url: 'https://arxiv.org/abs/2401.02582' },
               { title: 'Neuralizing Regular Expressions for Slot Filling', venue: 'EMNLP 2021 · Oral', url: 'https://aclanthology.org/2021.emnlp-main.747/' },

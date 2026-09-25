@@ -17,3 +17,7 @@ The bio and experience are concise editorial summaries of the owner's resume. EM
 - Neuralizing Regular Expressions for Slot Filling: https://aclanthology.org/2021.emnlp-main.747/
 
 The owner requested a coding-agent and asynchronous-RL focus for the bio, expressed as research interests rather than employer-specific work. Experience entries now show only company, title, and dates.
+
+## Publication update — 2026-09-24
+
+The owner confirmed NeurIPS 2026 acceptance for RepoLaunch and The Last Human-Written Paper: Agent-Native Research Artifacts. Both entries use that venue label. The second paper was added with its arXiv URL: https://arxiv.org/abs/2604.24658. Its title and author list were checked against arXiv; the acceptance status is owner-confirmed.
