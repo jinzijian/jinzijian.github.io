@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="610" viewBox="0 0 960 610" role="img" aria-labelledby="title desc">
+<title id="title">从执行到选择：主动探索与经验学习的循环</title>
+<desc id="desc">人给出长期目标和预算。AI 选择值得尝试的方向，执行和验证，从反馈更新经验，再决定下一步。示意图，不代表实验结果。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8b98aa"/></marker></defs>
+<rect width="960" height="610" rx="14" fill="#f6f8fc"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+<text x="48" y="58" font-size="17" letter-spacing="2" fill="#616d78">LEARN TO DO → LEARN WHAT TO DO</text>
+<text x="48" y="102" font-size="30" font-weight="600" fill="#1c2429">让每一次行动，改善下一次选择</text>
+<rect x="48" y="135" width="864" height="62" rx="8" fill="#e8eefc"/>
+<text x="480" y="174" text-anchor="middle" font-size="22" fill="#2459d5">人给出长期目标与边界 · 时间 / Token / Compute 预算</text>
+<g fill="white" stroke="#d8e0eb" stroke-width="1.5">
+<rect x="48" y="240" width="386" height="112" rx="9"/>
+<rect x="526" y="240" width="386" height="112" rx="9"/>
+<rect x="526" y="412" width="386" height="112" rx="9"/>
+<rect x="48" y="412" width="386" height="112" rx="9"/>
+</g>
+<g fill="#1c2429" font-size="24" font-weight="600">
+<text x="73" y="281">01 · 选择值得尝试的方向</text><text x="551" y="281">02 · 执行与验证</text>
+<text x="551" y="453">03 · 从结果中提取反馈</text><text x="73" y="453">04 · 更新经验与判断</text>
+</g>
+<g fill="#616d78" font-size="19">
+<text x="73" y="319">目标 × 当前状态 × 已有经验</text><text x="551" y="319">实验、代码修改、可检验的结果</text>
+<text x="551" y="491">收益、成本，以及失败澄清了什么</text><text x="73" y="491">保留有效经验，修剪过时认识</text>
+</g>
+<g stroke="#8b98aa" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+<path d="M443 296H514"/><path d="M719 362V400"/><path d="M514 468H446"/><path d="M241 400V364"/>
+</g>
+<text x="48" y="574" font-size="17" fill="#616d78">本文的研究设想 · 概念示意，非实验结果</text>
+</g></svg>
