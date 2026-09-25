@@ -1,9 +1,10 @@
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 
 const papers = [
-  { name: 'ChainSWE', title: 'Benchmarking Coding Agents on Multi-Bug Software Maintenance', description: 'What happens when a coding agent has to fix the next bug, and the one after that? Evaluating software maintenance as a continuous process.', authors: 'Qirui Jin, Lingching Tung, Kenan Li, et al.', href: 'https://arxiv.org/abs/2607.02606', category: 'Evaluation', date: 'Jul 2026' },
-  { name: 'SWE-Edit', title: 'Rethinking Code Editing for Efficient SWE-Agent', description: 'Separating code inspection from editing, with an editor trained to choose how to make each change.', authors: 'Yikai Zhang, Jiaxin Pei, Kenan Li, et al.', href: 'https://arxiv.org/abs/2604.26102', code: 'https://github.com/microsoft/SWE-Edit', category: 'Agent systems', date: 'Apr 2026' },
-  { name: 'ORACLE-SWE', title: 'Quantifying the Contribution of Oracle Information Signals on SWE Agents', description: 'Measuring which information helps coding agents succeed—from finding edit locations to understanding tests.', authors: 'Kenan Li, Qirui Jin, Liao Zhu, et al.', href: 'https://arxiv.org/abs/2604.07789', category: 'Agent analysis', date: 'Apr 2026' },
+  { name: 'RepoLaunch', title: 'Automating Build & Test Pipeline of Code Repositories on Any Language and Any Platform', href: 'https://arxiv.org/abs/2603.05026', venue: 'NeurIPS 2026', category: 'Build & test', date: '2026' },
+  { name: 'The Last Human-Written Paper', title: 'Agent-Native Research Artifacts', href: 'https://arxiv.org/abs/2604.24658', venue: 'NeurIPS 2026', category: 'Research artifacts', date: '2026' },
+  { name: 'ChainSWE', title: 'Benchmarking Coding Agents on Multi-Bug Software Maintenance', description: 'What happens when a coding agent has to fix the next bug, and the one after that? Evaluating software maintenance as a continuous process.', authors: 'Qirui Jin, Lingching Tung, Kenan Li, et al.', href: 'https://arxiv.org/abs/2607.02606', venue: 'EMNLP 2026', category: 'Evaluation', date: 'Jul 2026' },
+  { name: 'SWE-Edit', title: 'Rethinking Code Editing for Efficient SWE-Agent', description: 'Separating code inspection from editing, with an editor trained to choose how to make each change.', authors: 'Yikai Zhang, Jiaxin Pei, Kenan Li, et al.', href: 'https://arxiv.org/abs/2604.26102', code: 'https://github.com/microsoft/SWE-Edit', venue: 'EMNLP 2026', category: 'Agent systems', date: 'Apr 2026' },
 ];
 
 export default function Home() {
@@ -43,11 +44,11 @@ export default function Home() {
               {papers.map((paper, index) => <article className="paper" key={paper.name}>
                 <div className="paper-aside"><span className="paper-index">0{index + 1}</span><span className="paper-date">{paper.date}</span></div>
                 <div className="paper-main">
-                  <div className="paper-kicker">{paper.name === 'ORACLE-SWE' ? 'arXiv 2026' : 'EMNLP 2026'}<span className="venue-divider">/</span>{paper.category}</div>
+                  <div className="paper-kicker">{paper.venue}<span className="venue-divider">/</span>{paper.category}</div>
                   <h3><a href={paper.href}>{paper.name}<ArrowUpRight size={23} aria-hidden="true" /></a></h3>
                   <p className="paper-title">{paper.title}</p>
-                  <p className="paper-description">{paper.description}</p>
-                  <p className="authors">{paper.authors} <span className="author-separator">/</span> Co-author: <strong>Zijian Jin</strong></p>
+                  {paper.description && <p className="paper-description">{paper.description}</p>}
+                  {paper.authors && <p className="authors">{paper.authors} <span className="author-separator">/</span> Co-author: <strong>Zijian Jin</strong></p>}
                   <div className="paper-links"><a href={paper.href}>Paper <ArrowUpRight size={14} aria-hidden="true" /></a>{paper.code && <a href={paper.code}>Code <ArrowUpRight size={14} aria-hidden="true" /></a>}</div>
                 </div>
               </article>)}
@@ -55,8 +56,7 @@ export default function Home() {
           </section>
           <section className="related-work" aria-label="More selected publications">
             {[
-              { title: 'RepoLaunch: Automating Build & Test Pipeline of Code Repositories on Any Language and Any Platform', venue: 'NeurIPS 2026', url: 'https://arxiv.org/abs/2603.05026' },
-              { title: 'The Last Human-Written Paper: Agent-Native Research Artifacts', venue: 'NeurIPS 2026', url: 'https://arxiv.org/abs/2604.24658' },
+              { title: 'ORACLE-SWE: Quantifying the Contribution of Oracle Information Signals on SWE Agents', venue: 'arXiv 2026', url: 'https://arxiv.org/abs/2604.07789' },
               { title: 'Lita: Light Agent Uncovers the Agentic Coding Capabilities of LLMs', venue: 'arXiv 2025', url: 'https://arxiv.org/abs/2509.25873' },
               { title: 'CoCoT: Contrastive Chain-of-Thought Prompting for Large Multimodal Models', venue: 'ICPR 2024', url: 'https://arxiv.org/abs/2401.02582' },
               { title: 'Neuralizing Regular Expressions for Slot Filling', venue: 'EMNLP 2021 · Oral', url: 'https://aclanthology.org/2021.emnlp-main.747/' },
