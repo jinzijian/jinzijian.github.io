@@ -21,7 +21,7 @@ export default function Home() {
         <main id="main">
           <section className="intro" aria-labelledby="intro-title">
             <div className="intro-copy">
-              <p className="eyebrow"><span className="small-square" /> Senior Research Engineer · Meta</p>
+              <p className="eyebrow"><span className="small-square" /> Research Engineer · Meta</p>
               <h1 id="intro-title">Zijian Jin<span className="name-period">.</span></h1>
               <p className="also-name">You can call me Alex.</p>
               <p className="intro-statement">Coding agents &amp;<br />asynchronous RL.</p>
@@ -76,7 +76,7 @@ export default function Home() {
           <section className="experience-section" id="experience" aria-labelledby="experience-title">
             <div className="section-heading"><div><p className="eyebrow">03 / Experience</p><h2 id="experience-title">Where I’ve been building.</h2></div></div>
             {[
-              { company: 'Meta', role: 'Senior Research Engineer', dates: 'Jan 2026 — Present' },
+              { company: 'Meta', role: 'Research Engineer', dates: 'Jan 2026 — Present' },
               { company: 'Microsoft', role: 'Research Scientist', dates: 'Sep 2024 — Jan 2026' },
               { company: 'TikTok', role: 'Research Scientist', dates: 'Jul 2022 — Sep 2024' },
             ].map(job => <article className="experience-row" key={job.company}><p className="job-dates">{job.dates}</p><div><h3>{job.company}</h3><p className="job-role">{job.role}</p></div></article>)}
