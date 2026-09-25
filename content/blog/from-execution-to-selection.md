@@ -50,14 +50,14 @@ AI 演进的本质是**优化目标与决策权重的迁移**：
 
 *图 2｜连续维护的代价出现在后续任务。根据 [ChainSWE v2，Table 3](https://arxiv.org/html/2607.02606v2#S5.T3) 重绘：97 条长度为 3 的任务链，结果为 7 个模型的均值。纵轴为任务解决率，非整条链成功率。三幅子图分别是不同上下文管理配置。点击图片可查看大图。*
 
-[![保留历史带来的解决率变化热图，展示七个模型在三种上下文配置下的差异](/blog/from-execution-to-selection/chainswe-memory-effect.png)](/blog/from-execution-to-selection/chainswe-memory-effect.png)
-
-*图 3｜历史的收益依赖模型与配置。根据 [ChainSWE v2，Table 2](https://arxiv.org/html/2607.02606v2#S5.T2) 计算 Seq+Mem 减去 Seq 的解决率差值，单位为百分点；覆盖 100 条链、304 个任务。正值为改善，负值为下降。例如 GPT-5.5 在 Summarize 和 Sub-Agent 下获益，但 Baseline 下没有。图中不包含显著性判断。*
-
 这暴露了当前长程训练下的两个核心瓶颈：
 
 1. **状态污染（State Poisoning）**：由于现有的 Reward 只考虑当前目标的完成，模型会倾向于选择“能快速通过测试，但会留下长尾隐患”的短视方案。前面任务留下的“技术债”，直接改变并恶化了后续任务的工作条件。
 2. **经验转化失效（Experience Inefficiency）**：经历（History）未被有效压缩和内化为下一次决策的依据，仅仅沦为冗余甚至带有噪声的上下文干扰。模型没有在训练中学会“从上一次的代价中积累经验”。
+
+[![保留历史带来的解决率变化热图，展示七个模型在三种上下文配置下的差异](/blog/from-execution-to-selection/chainswe-memory-effect.png)](/blog/from-execution-to-selection/chainswe-memory-effect.png)
+
+*图 3｜历史的收益依赖模型与配置。根据 [ChainSWE v2，Table 2](https://arxiv.org/html/2607.02606v2#S5.T2) 计算 Seq+Mem 减去 Seq 的解决率差值，单位为百分点；覆盖 100 条链、304 个任务。正值为改善，负值为下降。例如 GPT-5.5 在 Summarize 和 Sub-Agent 下获益，但 Baseline 下没有。图中不包含显著性判断。*
 
 *这里需要区分实验观察与机制解释：ChainSWE 展示的是连续维护中的性能变化；关于 Reward 如何造成短视、以及应如何训练，是本文据此提出的研究判断，并非该评测直接证明的因果结论。*
 
