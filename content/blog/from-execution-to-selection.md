@@ -1,116 +1,116 @@
 ---
-title: "从执行到选择：谁来决定下一步？"
+title: "From Execution to Selection: Who Decides What Comes Next?"
 date: "2026-09-25"
-description: "Learn to Do, then Learn What to Do — 从 ChainSWE 的连续维护实验，思考主动探索、经验学习与 Research Taste。"
-lang: "zh-CN"
+description: "Learn to Do, then Learn What to Do — reflections on proactive exploration, learning from experience, and research taste, informed by ChainSWE."
+lang: "en"
 draft: false
 ---
 
-*—— Learn to Do, then Learn What to Do*
+*— Learn to Do, then Learn What to Do*
 
-## 一、瓶颈的迁移：从执行能力（Execution）到任务选择（Selection）
+## 1. The Shifting Bottleneck: From Execution to Task Selection
 
-AI 演进的本质是**优化目标与决策权重的迁移**：
+At its core, the evolution of AI is a **shift in optimization objectives and in where decision-making matters most**:
 
-- **Chat 阶段**（RLHF）：优化单步指令遵循（Instruction Following）。
-- **Agent 阶段**（GRPO）：以测试通过率和任务终态为 Reward，优化多步工具使用与错误纠正（Execution & Verification）。
+- **The chat stage** (RLHF): optimizing instruction following in individual interactions.
+- **The agent stage** (GRPO): using test pass rates and final task outcomes as rewards to optimize multi-step tool use and error correction — execution and verification.
 
-然而，当系统的执行能力（Execution）越强，任务选择（Task Selection）的杠杆率就越大。在有限的时间与计算资源下，找到一个有价值的问题，可能比更快地完成一批低价值任务更重要。
+As a system becomes better at execution, however, task selection becomes more consequential. With limited time and compute, finding a valuable problem may matter more than completing a collection of low-value tasks faster.
 
-**因此，人工智能的下一个里程碑，必然属于 Proactive AI。**
+**The next major milestone in AI, then, will belong to proactive AI.**
 
-这不仅是能力的迭代，更是 AI 与人类协同范式的根本重塑：
+This is more than another capability improvement. It is a fundamental change in how AI and humans work together:
 
-- **被动型 AI（Reactive AI）**：本质上依然是**执行为主**的工具——它依赖人类将需求显式拆解为具体的 Task Description，在既定的框架内“正确地执行指令”。人类是思考者，AI 是行动者。
-- **主动型 AI（Proactive AI）**：则是能够打破指令边界的智能体——它不再静默地等待命令，而是能够持续感知环境演进、理解长期目标，在高度的不确定性中**自主定位瓶颈、识别潜在机会，并给出“下一步值得做什么”的系统性决策**。
+- **Reactive AI** remains primarily a tool for execution. It relies on people to turn their needs into explicit task descriptions, then follows instructions correctly within a predefined frame. The human thinks; the AI acts.
+- **Proactive AI** can move beyond waiting for explicit instructions. It continually observes a changing environment, understands long-term goals, and, amid uncertainty, **identifies bottlenecks, recognizes opportunities, and makes reasoned decisions about what is worth doing next**.
 
-**未来智能的分水岭，将同时取决于两项能力：把事情做成（Execution），以及判断什么事情值得做（Selection）。** AI 不能仅仅被训练为一个更高效的“执行者”，它必须跨过从 **“Learn to Do”** 到 **“Learn What to Do”** 的门槛。谁率先完成了这一跨越，谁就掌握了下一代通用智能的真正钥匙。
+**The dividing line for future intelligence will involve two abilities: getting things done, and judging which things are worth doing.** AI cannot be trained only to become a more efficient executor. It must cross the threshold from **“Learn to Do”** to **“Learn What to Do.”** Whoever makes that transition first will hold a key to the next generation of general intelligence.
 
-## 二、Long-Horizon 的隐性困境：经验不等于成长
+## 2. The Hidden Problem with Long Horizons: Experience Is Not Growth
 
-把系统的运行跨度拉长（Long Horizon）并扩大上下文（Long Context），是 Agent 演进的必然趋势。
+Longer operating horizons and larger contexts are a natural direction for agent development.
 
-更长程的 RL 训练**确实能够实打实地拉高智能的上限**。当训练的反馈跨度拉大，模型能够自发涌现出更复杂的规划、状态追踪与自我纠错能力。这不仅仅是理论上的推演，而是已经在实验中被验证的趋势。
+Longer-horizon RL training **can meaningfully raise the ceiling of intelligence**. As the span of feedback increases, models can develop more complex planning, state tracking, and self-correction. This is not merely a theoretical argument; it is a trend that has been observed experimentally.
 
-**但目前做的还远远不够。**
+**But what we are doing today is still far from enough.**
 
-根源在于，**我们今天所做的“长程任务”，本质上依然是单目标（Single-Goal）的**。哪怕一个任务长达数十步，Reward 依然只关注“眼前这一个目标是否最终完成”，而完全忽略了模型为了完成当前目标所付出的隐性代价，更没有将“当前动作对未来其他目标的影响”纳入评价。
+The underlying issue is that **today’s “long-horizon tasks” are still fundamentally single-goal tasks**. A task may involve dozens of steps, yet its reward still asks only whether the current objective was ultimately completed. It overlooks the hidden costs incurred along the way and does not account for how current actions affect other, future goals.
 
-这种 Reward 的局限性，在真实的多任务连续演进场景中被瞬间放大。
+The limitations of that reward become much more visible when a system works continuously across multiple tasks.
 
-在 [ChainSWE](https://arxiv.org/abs/2607.02606v2) 的实验中，我们观察到一个典型现象：当 Agent 连续处理同一代码库中的多个任务时，前面修改的累积反而拖累了后续的表现；单纯保留完整的对话历史，也没有稳定带来收益。一个擅长单次修复的模型，并不能自然地维护好一个长期演进的代码库。
+In our [ChainSWE](https://arxiv.org/abs/2607.02606v2) experiments, we observed a characteristic pattern: when an agent handles multiple tasks in the same repository, accumulated earlier changes can hurt later performance. Simply retaining the full conversation history does not consistently help either. A model that is good at a single repair does not automatically become good at maintaining a codebase over time.
 
-为区分代码状态与对话历史的影响，ChainSWE 设置了三种评测模式：**Oracle** 使用此前任务的正确补丁作为起点；**Seq** 累积模型自己的代码修改，但在任务间重置对话；**Seq+Mem** 同时保留代码修改与对话历史。
+To distinguish repository state from conversation history, ChainSWE uses three evaluation modes. **Oracle** starts from the correct patches for earlier tasks. **Seq** accumulates the model’s own code changes but resets the conversation between tasks. **Seq+Mem** retains both the code changes and the conversation history.
 
-[![ChainSWE 在 Baseline、Summarize、Sub-Agent 三种配置下，Oracle、Seq 和 Seq+Mem 随任务位置变化的解决率](/blog/from-execution-to-selection/chainswe-by-position.png)](/blog/from-execution-to-selection/chainswe-by-position.png)
+[![ChainSWE resolution rates by bug position under Oracle, Seq, and Seq+Mem, for Baseline, Summarize, and Sub-Agent configurations](/blog/from-execution-to-selection/chainswe-by-position.png)](/blog/from-execution-to-selection/chainswe-by-position.png)
 
-*先前修改的累积拖累了后续修复；保留对话历史并未消除这一趋势。*
+*Accumulated earlier edits hurt subsequent repairs; retaining conversation history does not eliminate this trend.*
 
-这暴露了当前长程训练下的两个核心瓶颈：
+This reveals two central bottlenecks in current long-horizon training:
 
-1. **状态污染（State Poisoning）**：由于现有的 Reward 只考虑当前目标的完成，模型会倾向于选择“能快速通过测试，但会留下长尾隐患”的短视方案。前面任务留下的“技术债”，直接改变并恶化了后续任务的工作条件。
-2. **经验转化失效（Experience Inefficiency）**：经历（History）未被有效压缩和内化为下一次决策的依据，仅仅沦为冗余甚至带有噪声的上下文干扰。模型没有在训练中学会“从上一次的代价中积累经验”。
+1. **State poisoning.** When rewards consider only completion of the current goal, models have an incentive to choose short-sighted solutions that pass tests quickly but leave longer-term problems behind. Technical debt from earlier tasks changes — and worsens — the conditions under which later tasks must be solved.
+2. **Experience inefficiency.** History is not effectively distilled and incorporated into the next decision. Instead, it can become redundant or noisy context. The model has not learned through training how to turn the costs of its previous attempt into useful experience.
 
-*这里需要区分实验观察与机制解释：ChainSWE 展示的是连续维护中的性能变化；关于 Reward 如何造成短视、以及应如何训练，是本文据此提出的研究判断，并非该评测直接证明的因果结论。*
+*It is important to distinguish experimental observations from explanations of their cause. ChainSWE measures changes in performance during continuous maintenance. The account of how rewards may encourage short-sighted behavior, and how training should change, is a research interpretation proposed here, not a causal conclusion directly established by that evaluation.*
 
-**让模型运行得更久，并不能自动解决这两个问题。**
+**Simply letting a model run longer does not automatically solve either problem.**
 
-要让长程能力真正落地，RL 的训练范式必须往前再走一步：**从评价“单一目标的完成”，演变为评价“跨任务、跨目标下长期状态演进的总收益”**。只有当“不给未来留隐患”、“将经验转化为下一次决策的依据”能够让模型在训练中直接获得 Reward 时，持续工作的能力才会真正涌现，经验也才有机会从一份历史记录，变成下一次决策的依据。
+For long-horizon capabilities to become useful in practice, the RL training paradigm must take another step: **from evaluating completion of a single goal to evaluating the total benefit of long-term state evolution across tasks and goals**. Avoiding problems for future work and turning experience into a basis for the next decision must themselves earn reward during training. Only then can sustained work become a learned capability, and experience become more than a historical record.
 
-## 三、Proactive AI 的两条路线与 Research Taste
+## 3. Two Paths to Proactive AI, and Research Taste
 
-但这仍然没有回答任务选择的问题。一个系统可以熟练利用经验完成交代给它的工作，却很少主动发现新的工作。我们需要让 AI 参与判断：接下来什么可能有帮助。
+That still leaves the problem of task selection unanswered. A system may skillfully use experience to finish assigned work while rarely discovering new work on its own. We need AI to participate in deciding what might help next.
 
-我认为，Proactive AI 会沿着两条路线发展：
+I see two paths for proactive AI:
 
-### 面向普通用户：隐式意图理解（Implicit Intent Understanding）
+### For Everyday Users: Implicit Intent Understanding
 
-人不会把所有需求都及时写成指令。AI 建立在深度 Long Context 上，联系长期对话、个人偏好和当前处境，在合适的时机发现尚未表达的需求，发起主动提醒与协同。
+People do not promptly turn every need into an instruction. With deep, long-term context, AI can connect past conversations, personal preferences, and the present situation to recognize unexpressed needs and offer timely reminders or assistance.
 
-### 面向专业用户：基于长期目标的机会识别（Opportunity Recognition）
+### For Professional Users: Opportunity Recognition in Service of Long-Term Goals
 
-目标从“实现一个指定的方法”，扩展到“在既定约束下持续改善一个系统”。用户给出方向，AI 需要自己发现瓶颈、寻找方法、决定实验，并根据结果调整后续工作。
+The objective expands from implementing a specified method to continuously improving a system within defined constraints. The user provides a direction. The AI must discover bottlenecks, look for methods, choose experiments, and adjust subsequent work based on the results.
 
-更关键的是，AI 面对不断到来的论文、工具、实验结果和失败记录，能否判断哪些可能对当前目标有用。同一条信息对不同目标价值完全不同，判断有用性需要同时理解目标、当前状态和过去经验。
+More importantly, as papers, tools, experimental results, and failure records keep arriving, can the AI judge which ones might help with its current goal? The same information has very different value for different goals. Judging its usefulness requires understanding the goal, the current state, and past experience together.
 
-这就是我关心的 **Research Taste**——**在结果尚不确定时，判断一个方向是否值得尝试的 Search Policy。**
+This is what I mean by **research taste**: **a search policy for judging whether a direction is worth pursuing before its outcome is known**.
 
-Taste 既影响成功的机会，也影响失败能留下什么。一个没有带来直接提升的实验，如果帮助我们澄清瓶颈，也可能改善后续选择。主动探索与经验学习由此形成循环：系统选择值得开展的尝试，从结果中更新认识，再用新的认识选择下一次尝试。主动性决定它会经历什么，学习能力决定经历能留下什么。
+Taste affects both the chance of success and what a failure can leave behind. An experiment that produces no immediate improvement may still sharpen later choices if it clarifies a bottleneck. Proactive exploration and learning from experience therefore form a loop: choose a worthwhile attempt, update understanding from its outcome, and use that understanding to choose the next attempt. Proactivity determines what the system experiences; learning determines what those experiences leave behind.
 
-## 四、评测即导向：构建 Proactive Benchmark
+## 4. Evaluation Sets the Direction: Building a Proactive Benchmark
 
-要训练 Taste，首先需要能够量化“价值识别”与“探索策略”的 Benchmark。
+To train taste, we first need a benchmark that can measure value recognition and exploration strategy.
 
-**我的设想是，给 AI 一个可运行但有改进空间的 Baseline，明确目标与预算，再持续提供混杂的信息流**：
+**My proposal is to give AI a working baseline with room for improvement, specify a goal and a budget, and then continuously supply a mixed stream of information**:
 
-- **信息流输入**：既包含已经验证有用的方法，也包含相关但不适用、收益有限或成本过高的内容。
-- **自主决策**：不显式标出 Solution。系统自己决定关注什么、尝试什么，以及最终采用什么。
-- **评价指标**：落到代码/系统的实际改善，以及取得这些改善付出的成本（Token / Time / Compute）上。
+- **Information input:** include methods already known to be useful, alongside material that is relevant but inapplicable, offers limited benefit, or costs too much to use.
+- **Autonomous decisions:** do not explicitly identify the solution. Let the system decide what to pay attention to, what to try, and what to adopt.
+- **Evaluation:** measure actual improvements to the code or system, together with the tokens, time, and compute required to achieve them.
 
-这个设置保留了一个现实中的困难：有用的信息可能已经出现，但没有人替你标出来。系统需要自己发现它与目标的关系。如果我们能评价这种判断，就有机会为它建立训练目标。优化目标推动能力发展的逻辑，可以继续向前延伸：**从回答质量，到任务完成，再到机会识别和持续进展。**
+This preserves a real-world difficulty: useful information may already be available, but nobody has marked it as useful for you. The system must discover its relationship to the goal. If we can evaluate that judgment, we have a chance to establish a training objective for it. The logic of using optimization objectives to drive capability can extend further: **from answer quality, to task completion, to opportunity recognition and sustained progress**.
 
-## 五、落地 Proactive AI 必须跨过的三个 Gap
+## 5. Three Gaps Proactive AI Must Cross
 
-沿着这条路线，要让 Proactive AI 能够可靠地在真实开放环境中持续探索、主动提出并验证改进方案，至少需要跨过三个关键 Gap：
+For proactive AI to explore reliably in real, open environments, and to propose and verify improvements over time, it must cross at least three important gaps.
 
-### 1. 轨迹级的 Credit Assignment 与 Error Localization
+### 1. Trajectory-Level Credit Assignment and Error Localization
 
-长程任务要求连续做对相互依赖的决策，早期错误可能沿着后续步骤放大。一个关键挑战，是让模型可靠地定位轨迹中第一次出错的位置（First Fault Point）。不知道哪里错，就未必知道应该从哪里修正。系统需要能够执行改进，也需要能够诊断和恢复改进过程中的错误。
+Long-horizon tasks require a sequence of correct, interdependent decisions. Early mistakes can compound through later steps. One central challenge is enabling a model to reliably locate the first point of failure in a trajectory. If it does not know where things went wrong, it may not know where to begin correcting them. A system must be able both to carry out improvements and to diagnose and recover from errors in the improvement process.
 
-### 2. 单调递增的经验积累（Monotonic Experience Accumulation）
+### 2. Monotonic Experience Accumulation
 
-必须在可比的任务状态和资源预算下，验证过去的经历是否改善了后续判断。有效的经验应当保留，过时或错误的经验必须具备 Pruning 机制。只有这样，进展才能真正积累下来。
+We must test whether past experience improves later judgment under comparable task states and resource budgets. Useful experience should be retained, while outdated or incorrect experience needs a pruning mechanism. Only then can progress truly accumulate.
 
-### 3. 开放环境下的 Value Extraction
+### 3. Value Extraction in Open Environments
 
-外部知识一直在增加，系统事先并不知道什么会帮助自己。它需要自主完成从信息流中 `Filter -> Verify -> Assimilate` 的闭环，把潜在有用的信息变成下一次决策和动作的机会。
+External knowledge keeps growing, and the system does not know in advance what will help it. It must autonomously complete the loop of `Filter -> Verify -> Assimilate`, turning potentially useful information into opportunities for the next decision and action.
 
-## 结语
+## Closing Thoughts
 
-这条主动探索与经验学习的循环能否持续，仍然需要实验回答。但它给出了一个清晰的研究方向：**可靠地行动，让经验产生收益，主动发现新的改进机会。**
+Whether this loop of proactive exploration and learning from experience can be sustained remains an experimental question. But it points to a clear research direction: **act reliably, make experience useful, and proactively discover new opportunities for improvement**.
 
-我期待的下一代 AI，会越来越善于承担两种责任：完成眼前的工作，以及为下一步提出有依据的选择。人给出长期目标，AI 在持续探索中判断什么值得做，并通过经验让这种判断越来越好。
+The next generation of AI I hope to see will become better at taking on two responsibilities: completing the work in front of it, and offering well-founded choices about what should come next. People provide long-term goals. AI explores continuously, judges what is worth doing, and uses experience to make that judgment better over time.
 
 ---
 
-**图表来源**：Qirui Jin 等，*ChainSWE: Benchmarking Coding Agents on Multi-Bug Software Maintenance*，[arXiv:2607.02606v2，Table 3](https://arxiv.org/html/2607.02606v2#S5.T3)，2026。图中展示 97 条长度为 3 的任务链上的解决率，为 7 个模型的均值；三幅子图对应不同上下文管理配置。根据原文数据重绘，采用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 许可并注明改编；[下载绘图数据](/blog/from-execution-to-selection/chainswe-data.csv)。
+**Figure source:** Qirui Jin et al., *ChainSWE: Benchmarking Coding Agents on Multi-Bug Software Maintenance*, [arXiv:2607.02606v2, Table 3](https://arxiv.org/html/2607.02606v2#S5.T3), 2026. Resolution rates are averaged across seven models over 97 three-bug chains; the three panels correspond to different context-management configurations. Redrawn from the reported data under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with this adaptation noted. [Download the chart data](/blog/from-execution-to-selection/chainswe-data.csv).

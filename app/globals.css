@@ -190,3 +190,11 @@ nav a[aria-current='page'] { color: var(--primary); text-decoration: underline; 
 .prose p:has(img) + p em { font-style: normal; }
 
 .prose img[src$="/chainswe-by-position.png"] { width: min(100%, 600px); }
+.post-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.language-switch { display: inline-flex; gap: 0; padding: 3px; border: 1px solid var(--border); border-radius: 7px; }
+.language-switch a { padding: 0 14px; min-height: 38px; border-radius: 4px; font-size: .875rem; color: var(--muted-foreground); }
+.language-switch a[aria-current='page'] { background: var(--muted); color: var(--primary); text-decoration: none; font-weight: 600; }
+.language-switch a:hover { color: var(--primary); }
+.post-languages { display: flex; gap: 20px; margin-top: 12px; font-size: .875rem; color: var(--primary); }
+.post-languages a { display: inline-flex; align-items: center; min-height: 36px; }
+.post-languages a:hover { text-decoration: underline; text-underline-offset: 4px; }

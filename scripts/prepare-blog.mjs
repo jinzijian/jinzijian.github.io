@@ -24,7 +24,19 @@ export async function readPosts(directory) {
       throw new Error(`${filename}: use a valid quoted date, e.g. "2026-09-25"`);
     }
     if (!content.trim()) throw new Error(`${filename}: article body is empty`);
-    posts.push({ slug, title: data.title.trim(), description: data.description.trim(), date, lang: typeof data.lang === 'string' ? data.lang : 'en', html: markdown.render(content) });
+    if (data.translationOf !== undefined && (typeof data.translationOf !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(data.translationOf))) {
+      throw new Error(`${filename}: translationOf must be the original article's slug`);
+    }
+    posts.push({ slug, title: data.title.trim(), description: data.description.trim(), date, lang: typeof data.lang === 'string' ? data.lang : 'en', ...(data.translationOf ? { translationOf: data.translationOf } : {}), html: markdown.render(content) });
+  }
+  const languages = new Set();
+  for (const post of posts) {
+    if (post.translationOf && !posts.some(original => original.slug === post.translationOf && !original.translationOf)) {
+      throw new Error(`${post.slug}: translationOf must reference a published original article`);
+    }
+    const key = `${post.translationOf || post.slug}:${post.lang}`;
+    if (languages.has(key)) throw new Error(`${post.slug}: duplicate language in article translations`);
+    languages.add(key);
   }
   return posts.sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 }
